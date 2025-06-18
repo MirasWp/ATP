@@ -1,0 +1,9 @@
+flask
+opencv-python
+face_recognition
+scikit-learn
+numpy
+Pillow
+mediapipe
+mysql-connector-python
+joblib
