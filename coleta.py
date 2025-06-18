@@ -21,6 +21,7 @@ cursor = conexao.cursor()
 DIR_FOTOS = r"C:\Users\lucas\OneDrive\Desktop\ATP\Fotos"
 DIR_FACES = r"C:\Users\lucas\OneDrive\Desktop\ATP\Faces"
 
+
 detector = mp.solutions.face_detection.FaceDetection(model_selection=1, min_detection_confidence=0.5)
 
 def extrair_face(arquivo, size=(180, 180)):
@@ -71,8 +72,8 @@ def load_fotos(diretorio_src, diretorio_target):
 
         face = extrair_face(path)
         if face is not None:
-            face.save(path_tg)
-            salvar_no_banco(os.path.splitext(filename)[0], path_tg)
+            face.save(path_tg) #salva a imagem no disco
+            salvar_no_banco(os.path.splitext(filename)[0], path_tg) # passa o caminho salvo para função armazenar no banco de dados
 
 def carregar_dir(diretorio_src, diretorio_target):
     for subdir in listdir(diretorio_src):
